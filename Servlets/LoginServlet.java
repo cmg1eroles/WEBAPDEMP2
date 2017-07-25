@@ -56,7 +56,7 @@ public class LoginServlet extends HttpServlet {
 			response.addCookie(cookie);
 			
 			//go to success page
-			//request.getRequestDispatcher("").forward(request, response);
+			request.getRequestDispatcher("homepage.jsp").forward(request, response);
 		} else {
 			//invalid credentials, redirect
 			response.sendRedirect("loginreg.html");

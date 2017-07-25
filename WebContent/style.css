@@ -1,13 +1,45 @@
 @CHARSET "ISO-8859-1";
 
+/**
+	white: #ffffff;
+	pink: #ff5964;
+	blue: #35a7ff;
+	green: #6bf178;
+	yellow: #ffe74c;
+**/
+
+body {
+	font-family: "arial";
+}
+
 #header {
 	height: 60px;
 	width: 100%;
 	min-width: 800px;
-	background-color: forestgreen;
+	background-color: #35a7ff;
 	position: fixed;
 	top: 0;
 	left: 0;
+}
+
+.signing {
+	position: relative;
+	float: right;
+	right: 10px;
+	top: 10px;
+	padding: 12px;
+	border-radius: 30px;
+	color: #ffffff;
+	background-color: #ff5964;
+	text-decoration: none;
+}
+
+#username {
+	position: relative;
+	float: right;
+	right: 20px;
+	top: 22px;
+	color: #ffffff;
 }
 
 #loginform {
@@ -27,4 +59,28 @@
 #regbtn {
 	float: right;
 	right: 0px;
+}
+
+#container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    position: relative;
+    top: 70px;
+}
+
+#more{
+	font-family: sans-serif;
+    font-size: 12px;
+	position: relative;
+    width: 100px;
+    top: 120px;
+    height: 50px;
+    margin: auto;
+}
+
+#more:hover{
+    color: #ff5964;
+    text-decoration: underline;
+
 }
