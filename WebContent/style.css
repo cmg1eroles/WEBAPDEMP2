@@ -1,0 +1,30 @@
+@CHARSET "ISO-8859-1";
+
+#header {
+	height: 60px;
+	width: 100%;
+	min-width: 800px;
+	background-color: forestgreen;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+#loginform {
+	position: relative;
+	float: right;
+	right: 0px;
+	top: 30px;
+}
+
+#registerform {
+	position: relative;
+	float: right;
+	right: 0px;
+	top: 100px;
+}
+
+#regbtn {
+	float: right;
+	right: 0px;
+}

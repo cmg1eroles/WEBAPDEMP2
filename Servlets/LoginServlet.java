@@ -44,7 +44,7 @@ public class LoginServlet extends HttpServlet {
 		
 		//check if valid (hardcoded for now since pwede haha)
 		if (username.equals("cmg1eroles") && password.equals("batman") ||
-			username.equals("michaelrespicio") && password.equals("michael") ||
+			username.equals("michaelrespicio") && password.equals("1") ||
 			username.equals("jjmojica") && password.equals("jsquared")) {
 			//add session
 			request.getSession().setAttribute("un", username);
@@ -59,7 +59,7 @@ public class LoginServlet extends HttpServlet {
 			//request.getRequestDispatcher("").forward(request, response);
 		} else {
 			//invalid credentials, redirect
-			response.sendRedirect("index.html");
+			response.sendRedirect("loginreg.html");
 		}
 	}
 

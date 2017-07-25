@@ -48,7 +48,7 @@ public class RegisterServlet extends HttpServlet {
 			username.equals("jjmojica")) {
 			//show error, already taken
 			// go back to register
-			response.sendRedirect("index.html");
+			response.sendRedirect("loginreg.html");
 		} else {
 			//add new user to db or something
 			
