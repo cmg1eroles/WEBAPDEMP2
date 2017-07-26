@@ -193,6 +193,9 @@ input{
 	border-radius: 5px;
 }
 
-#descr{
-	height:90px;
+#desc{
+	text-align: center;
+	font-size: 18px;
+	font-family: 'Lato', sans-serif;
+	height:50px;
 }
