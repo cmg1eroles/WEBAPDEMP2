@@ -16,10 +16,19 @@ body {
 	height: 60px;
 	width: 100%;
 	min-width: 800px;
+<<<<<<< HEAD
 	background-color: #35a7ff;
+=======
+	background-color: #4ea292;
+>>>>>>> 8a7a0334402ebafb55eb7b752df1c5706a6ec025
 	position: fixed;
 	top: 0;
 	left: 0;
+    font-family: myFirstFont;
+}
+
+body{
+    background-color: #e5e8e1;
 }
 
 .signing {
