@@ -21,6 +21,8 @@
 		</div>
 		<hr>
 		<form id="details">
+			<input type="file" name="image">
+			<br><br>
 			Title: <input type="text" name="title">
 			<br><br>
 			Description: <input type="text" name="desc" id="descr">

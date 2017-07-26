@@ -4,7 +4,7 @@
 <html>
 <head>
 <title>Instaliter | User Profile</title>
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="uprofile.css">
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <body>
@@ -25,8 +25,9 @@
 
 <div id="divider">
 	<hr>
-		<button class="btn">PUBLIC PHOTOS</button>
-		<button class="btn">PRIVATE PHOTOS</button>
+		<div id="desc">
+			Test Description. Test Description. Test Description.
+		</div>
 	<hr>
 </div>
 
