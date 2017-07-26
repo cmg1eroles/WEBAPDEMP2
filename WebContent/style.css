@@ -4,10 +4,15 @@
 	height: 60px;
 	width: 100%;
 	min-width: 800px;
-	background-color: forestgreen;
+	background-color: #4ea292;
 	position: fixed;
 	top: 0;
 	left: 0;
+    font-family: myFirstFont;
+}
+
+body{
+    background-color: #e5e8e1;
 }
 
 #loginform {
