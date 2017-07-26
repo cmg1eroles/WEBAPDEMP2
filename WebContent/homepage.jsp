@@ -4,14 +4,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Instaliter | Public Photos</title>
+<title>Instaliter | Photos</title>
 <link href="style.css" rel="stylesheet" />
 </head>
 <body>
 	<div id="header">
+		<a href="loginreg.html" class="signing">SIGN IN</a>
 		<a href="logout" class="signing">SIGN OUT</a>
-		<span id="username">${un}</span>
-		<!-- <a href="loginreg.html" id="signing">SIGN IN</a> -->
+		<span id="username">${sessionScope.un}</span>
 	</div>
 	
 	<div id="container">
