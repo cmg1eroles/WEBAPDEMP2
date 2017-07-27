@@ -409,13 +409,16 @@ input{
 	height:55px;
 }
 
-#span-name{
+#btn-name{
 	font-family: Billabong;
 	color: white;
 	font-size: 40px;
 	position:relative;
 	left:46%;
 	top:10px;
+	border:none;
+	background-color:transparent;
+	outline:none;
 }
 
 /** modal **/
