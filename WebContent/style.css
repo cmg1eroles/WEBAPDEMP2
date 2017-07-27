@@ -65,6 +65,14 @@ div{
 	width: 300px;	
 }
 
+.loginreglbl{
+	text-align: center;
+	font-size: 40px;
+	width:300px;
+	font-family: 'Lato', sans-serif;
+	font-weight: bold;
+}
+
 .loginregbtn{
 	width: 300px;
 	margin: auto;	
@@ -99,6 +107,7 @@ div{
 }
 
 footer{
+	margin-top:10px;
 	width:100%;
 	padding-top: 30px;
 	font-family: 'Lato', sans-serif;
