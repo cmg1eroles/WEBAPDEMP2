@@ -48,7 +48,8 @@ public class RegisterServlet extends HttpServlet {
 			username.equals("jjmojica")) {
 			//show error, already taken
 			// go back to register
-			response.sendRedirect("loginreg.html");
+			request.setAttribute("regerror", "Username already taken!");
+			request.getRequestDispatcher("loginreg.jsp").forward(request, response);
 		} else {
 			//add new user to db or something
 			
@@ -62,7 +63,7 @@ public class RegisterServlet extends HttpServlet {
 			response.addCookie(cookie);
 			
 			//go to success page
-			//request.getRequestDispatcher("").forward(request, response);
+			request.getRequestDispatcher("homepage.jsp").forward(request, response);
 		}
 	}
 

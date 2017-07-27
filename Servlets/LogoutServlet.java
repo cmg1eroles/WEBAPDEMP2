@@ -39,7 +39,7 @@ public class LogoutServlet extends HttpServlet {
 		response.addCookie(cookie);
 		
 		// go to index.html
-		response.sendRedirect("loginreg.html");
+		response.sendRedirect("loginreg.jsp");
 	}
 
 	/**

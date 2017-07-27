@@ -14,7 +14,7 @@
 
 	<div id="header">
 		<a href="homepage.jsp"><button class="clickable" id="btn-name">Instaliter</button></a>
-		<a href="loginreg.html" id="signin" class="signing">SIGN IN</a>
+		<a href="loginreg.jsp" id="signin" class="signing">SIGN IN</a>
 		<a href="logout" id="signout" class="signing">SIGN OUT</a>
 		<span id="username">${sessionScope.un}</span>
 	</div>

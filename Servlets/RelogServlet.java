@@ -50,7 +50,7 @@ public class RelogServlet extends HttpServlet {
 			// use cookie value and set it as attr to session
 			request.getSession().setAttribute("un", username);
 			// go to success page
-			//request.getRequestDispatcher("").forward(request, response);
+			request.getRequestDispatcher("homepage.jsp").forward(request, response);
 		}else{
 			// user had not visited website, or logged out
 			// go to index.html
