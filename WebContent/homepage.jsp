@@ -8,6 +8,7 @@
 <link href="style.css" rel="stylesheet" />
 <script src="jquery-3.2.1.js"></script>
 <script src="header.js"></script>
+<script src="loadphotos.js"></script>
 </head>
 <body>
 	<div id="header">
@@ -35,16 +36,6 @@
 	</div>
 	
 	<div id="container">
-    	<div class="thumbnail"><img src="resources/imgs/public/batman1.jpg"></div>
-    	<div class="thumbnail"><img src="resources/imgs/public/batman2.jpg"></div>
-    	<div class="thumbnail"><img src="resources/imgs/public/batman3.jpg"></div>
-    	<div class="thumbnail"><img src="resources/imgs/public/batman4.jpg"></div>
-    	<div class="thumbnail"><img src="resources/imgs/public/batman5.jpg"></div>
-    	<div class="thumbnail"><img src="resources/imgs/public/girl1.jpg"></div>
-    	<div class="thumbnail"><img src="resources/imgs/public/girl2.jpg"></div>
-    	<div class="thumbnail"><img src="resources/imgs/public/girl3.jpg"></div>
-    	<div class="thumbnail"><img src="resources/imgs/public/girl4.jpg"></div>
-    	<div class="thumbnail"><img src="resources/imgs/public/girl5.jpg"></div>
     </div>  
         
     <div id="more">
@@ -52,5 +43,48 @@
     		<img  src="resources/icons/angle-arrow-down.png" >
     	</div>
     </div>
+    
+    <script>
+    	const BY = 15;
+    	var lastpic;
+    	
+    	function addPic(num) {
+    		var d = document.createElement("div");
+    		var img = document.createElement("img");
+    		
+    		$(d).addClass("thumbnail");
+    		
+    		$(d).attr("data-photoId", num);
+    		$(img).attr("src", publicphotos[num].src);
+    		
+    		$(d).append(img);
+    		$("#container").append(d);
+    	}
+    	
+    	function loadNext(by) {
+    		var i;
+    		for (i = lastpic ; i >= lastpic-(by-1) && i >= 0 ; i--) {
+                addPic(i);
+                if (i == 0) {
+                    lastpic = -1;
+                    $("#more").hide();
+                    break;
+                }
+            }
+            lastpic = i;
+    	}
+    	
+    	$(document).ready(function() {
+    		$.when(loadPublicPhotos()).done(function() {
+    			lastpic = publicphotos.length-1;
+    			
+    			loadNext(BY);
+	            
+	    		$("#more").click(function() {
+	    			loadNext(BY);
+	    		});
+    		});
+    	});
+    </script>
 </body>
 </html>
