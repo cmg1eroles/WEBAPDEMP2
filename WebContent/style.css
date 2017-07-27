@@ -255,7 +255,7 @@ input{
     padding: 18px;
     border-radius: 0px 10px 10px 0px;
     top: 5px;
-    right: 40px;
+    margin-right: 40px;
 }
 
 #search-button:hover {
@@ -264,7 +264,7 @@ input{
 
 #hanap {
 	position: relative;
-    right: 36px;
+    margin-right: -3px;
     top: 8px;
     height: 35px;
     width: 250px;
