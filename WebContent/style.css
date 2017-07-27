@@ -142,6 +142,10 @@ footer{
 	color: #ffffff;
 }
 
+.clickable:hover {
+	cursor: pointer;
+}
+
 /** loginregister **/
 
 #loginform {
@@ -412,4 +416,50 @@ input{
 	position:relative;
 	left:46%;
 	top:10px;
+}
+
+/** modal **/
+
+#modal {
+    background-color: rgba(0,0,0,0.7);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    //display: none;
+}
+
+#modal-container {
+	position: absolute;
+	float: left;
+	margin: auto;
+	background-color: #000;
+	width: 850px;
+	height: 500px;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	aligh-self: center;
+}
+
+#modal-container img {
+	width: 500px;
+	height: 500px;
+}
+
+#modal-info {
+	background-color: #fff;
+	float: right;
+	position: relative;
+	width: 350px;
+	height: 500px;
+}
+
+.photo-info {
+	display: block;
+	padding-top: 10px;
+	margin-left: 10px;
 }
