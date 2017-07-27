@@ -5,6 +5,20 @@ body {
 	font-family: "arial";
 }
 
+@font-face {
+		font-family: 'Billabong';
+		font-style: normal;
+		font-weight: normal;
+		src: local('Billabong'), url('Billabong.woff') format('woff');
+	}
+	
+#name{
+	text-align: center;
+	font-family: Billabong;
+	color: white;
+	font-size: 40px;
+	padding: 10px;
+}
 #header {
 	height: 55px;
 	background-color: #333;
