@@ -335,3 +335,26 @@ input{
     width: 250px;
     border-radius: 10px 0px 0px 10px;
 }
+
+#form-div{
+	width:300px;
+	margin:auto;
+}
+
+#form-div input{
+	width:300px;
+}
+
+#form-div button{
+	width: 148px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-radius: 10px;
+}
+
+#uploadbtn{
+	width:300px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-radius: 10px;
+}
