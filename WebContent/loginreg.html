@@ -4,27 +4,53 @@
 <meta charset="ISO-8859-1">
 <title>Instaliter | Sign In</title>
 <link href="style.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="upload.css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
 </head>
 <body>
 
 	<div id="header">
+		
+	</div>
+	
+	<div class="loginregdiv">
 		<form id="loginform" action="login" method="POST">
+			<br><br><br>
+			Login
+			<br><br><br>
 			Username: <input type="text" name="uname">
+			<br><br>
 			Password: <input type="password" name="pword">
-			<input type="submit" value="LOGIN">
+			<br><br>
+			<div class="loginregbtn">
+				<input id="loginbtn" type="submit" value="LOGIN">
+			</div>
+			<br><br>
+			Do not have an account yet? <br> <span id="gotoreg" onclick="">Register here!</span>
 		</form>
 	</div>
 	
-	<form id="registerform" action="register" method="POST">
-		Sign Up
-		<br>
-		Username: <input type="text" name="uname">
-		<br>
-		Password: <input type="password" name="pword">
-		<br>
-		Description: <input type = "text" name="desc">
-		<br>
-		<input id="regbtn" type="submit" value="REGISTER">
-	</form>
+	<div class="divider"></div>
+	
+	<div class="loginregdiv">
+	
+		<form id="registerform" action="register" method="POST">
+			Sign Up
+			<br><br><br>
+			Username: <input type="text" name="uname">
+			<br><br>
+			Password: <input type="password" name="pword">
+			<br><br>
+			Description: <input type = "text" name="desc">
+			<br><br>
+			<div class="loginregbtn">
+				<input id="regbtn" type="submit" value="REGISTER">
+			</div>
+			<br><br><br>
+		</form>
+	</div>
+	
+	<footer> © Instaliter 2017</footer>
 </body>
 </html>
