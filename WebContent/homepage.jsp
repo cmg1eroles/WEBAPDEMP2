@@ -26,17 +26,20 @@
 	
 	<div id="menu"> 
 		<div id="innermenu">
-			<span class="menubtn">
+			<span id="publicbtn" class="menubtn">
 			Public Photos
 			</span>
-			<span class="menubtn">
+			<span id="sharedbtn" class="menubtn">
 			Shared Photos
 			</span>
 		</div> 
 	</div>
 	
-	<div id="container">
+	<div id="public-container" class="container">
     </div>  
+    
+    <div id="private-container" class="container">
+    </div>
         
     <div id="more">
     	<div id="moreimg">
@@ -46,7 +49,18 @@
     
     <script>
     	const BY = 15;
-    	var lastpic;
+    	var sharedpics = [];
+    	var uname, mode;
+    	var lastpic, lastshared;
+    	
+    	function loadShared() {
+    		for (var i = 0 ; i < privatephotos.length ; i++) {
+    			var p = privatephotos[i];
+    			var allowed = p.allowed;
+    			if ($.inArray(uname, allowed) >= 0) 
+    				sharedpics.push(p);
+    		}
+    	}
     	
     	function addPic(num) {
     		var d = document.createElement("div");
@@ -58,31 +72,81 @@
     		$(img).attr("src", publicphotos[num].src);
     		
     		$(d).append(img);
-    		$("#container").append(d);
+    		$("#public-container").append(d);
+    	}
+    	
+    	function addPrivate(num) {
+    		var d = document.createElement("div");
+    		var img = document.createElement("img");
+    		
+    		$(d).addClass("thumbnail");
+    		
+    		$(d).attr("data-photoId", num);
+    		$(img).attr("src", sharedpics[num].src);
+    		
+    		$(d).append(img);
+    		$("#private-container").append(d);	
     	}
     	
     	function loadNext(by) {
     		var i;
-    		for (i = lastpic ; i >= lastpic-(by-1) && i >= 0 ; i--) {
+    		for (i = lastpic ; i >= lastpic-(by-1) && i >= 0 ; i--)
                 addPic(i);
-                if (i == 0) {
-                    lastpic = -1;
-                    $("#more").hide();
-                    break;
-                }
-            }
             lastpic = i;
     	}
     	
+    	function loadPrivate(by) {
+    		var i;
+    		for (i = lastshared ; i >= lastshared-(by-1) && i >= 0 ; i--)
+                addPrivate(i);
+            lastshared = i;
+    	}
+    	
     	$(document).ready(function() {
-    		$.when(loadPublicPhotos()).done(function() {
-    			lastpic = publicphotos.length-1;
-    			
-    			loadNext(BY);
-	            
-	    		$("#more").click(function() {
+    		uname = $("#username").html();
+    		$("#private-container").hide();
+    		$("#public-container").show();
+    		mode = "public";
+    	
+    		$.when(loadPublicPhotos(), loadPrivatePhotos()).done(function() {
+    			$.when(loadShared()).done(function() {
+    				
+    				lastpic = publicphotos.length-1;
+	    			lastshared = sharedpics.length-1;
+	    			
 	    			loadNext(BY);
-	    		});
+	    			loadPrivate(BY);
+		            
+		    		$("#more").click(function() {
+		    			if (mode == "public") {
+		    				loadNext(BY);
+		    				if (lastpic = -1)
+		    					$("#more").hide();
+		    			} else if (mode == "shared") {
+		    				loadPrivate(BY);
+		    				if (lastshared == -1)
+		    					$("#more").hide();
+		    			}
+		    		});
+    			});
+    		});
+    		
+    		$("#publicbtn").click(function() {
+    			$("#private-container").hide();
+    			$("#public-container").show();
+    			if (lastpic == -1)
+    				$("#more").hide();
+    			else $("#more").show();
+    			mode = "public";
+    		});
+    		
+    		$("#sharedbtn").click(function() {
+    			$("#public-container").hide();
+    			$("#private-container").show();
+    			if (lastshared == -1)
+    				$("#more").hide();
+    			else $("#more").show();
+    			mode = "shared";
     		});
     	});
     </script>
