@@ -10,6 +10,7 @@
 </head>
 <body>
 	<div id="header">
+		<span id="span-name">Instaliter</span>
 		<a href="loginreg.html" class="signing">SIGN IN</a>
 		<a href="logout" class="signing">SIGN OUT</a>
 		<span id="username">${sessionScope.un}</span>

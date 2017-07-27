@@ -12,6 +12,9 @@
 </head>
 <body>
 	<div id="header">
+        <div id="homepage-header">
+            <div id="name"> Instaliter </div>
+        </div>
 		<a href="loginreg.html" id="signin" class="signing">SIGN IN</a>
 		<a href="logout" id="signout" class="signing">SIGN OUT</a>
 		<span id="username">${sessionScope.un}</span>

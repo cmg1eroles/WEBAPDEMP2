@@ -388,3 +388,28 @@ input{
 	padding-bottom: 10px;
 	border-radius: 10px;
 }
+
+#homepage-header {
+	height: 55px;
+	background-color: #333;
+	position: fixed;
+    top: 0;
+    right: 80%;
+    left: 0;
+  	min-width: 300px;
+  	z-index: 1;
+}
+
+#sign-in-out{
+	bottom:10px;
+	height:55px;
+}
+
+#span-name{
+	font-family: Billabong;
+	color: white;
+	font-size: 40px;
+	position:relative;
+	left:46%;
+	top:10px;
+}
