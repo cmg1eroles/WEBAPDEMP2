@@ -20,18 +20,24 @@
 			<img src="resources/icons/upload.png">
 		</div>
 		<hr>
-		<form id="details">
-			<input type="file" name="image">
-			<br><br>
-			Title: <input type="text" name="title">
-			<br><br>
-			Description: <input type="text" name="desc" id="descr">
-			<br><br>
-			Tags: <input type="text" name="tag">
-			<br><br>
-			<button class="choose">Post as public photo</button>
-			<button class="choose">Post as private photo</button>
-		</form>
+		<div id="form-div">
+			<form id="details">
+				<input type="file" name="image" id="uploadbtn">
+				<br><br>
+				Title: 
+				<input type="text" name="title" class="input-box">
+				<br><br>
+				Description: 
+				<input type="text" name="desc" id="descr" class="input-box">
+				<br><br>
+				Tags: 
+				<input type="text" name="tag" class="input-box">
+				<br><br>
+				<button class="choose">Post as public photo</button>
+				<button class="choose">Post as private photo</button>
+			</form>
+		</div>
+		
 	</div>
 </body>
 </html>
