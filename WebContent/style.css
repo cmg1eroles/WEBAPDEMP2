@@ -34,6 +34,60 @@ body {
 	margin-left: 5px;
 }
 
+.loginregdiv{
+	position: relative;
+	top: 50px;
+	width: 300px;
+	height: 500px;
+	margin: auto;	
+}
+
+.loginregdiv input{
+	width: 300px;	
+}
+
+.loginregbtn{
+	width: 300px;
+	margin: auto;	
+}
+
+.loginregbtn #regbtn{
+	width: 300px;
+	margin: auto;	
+}
+
+.loginregbtn #loginbtn{
+	width: 300px;
+	margin: auto;	
+}
+
+.divider{
+	height: 5px;
+	width:100%;
+	background-color: lightgray;
+		
+}
+
+#gotoreg{
+	color: blue;
+	text-decoration: underline;
+	-webkit-transform: translate(300px, 0);
+    transform: translate(300px, 0);
+}
+
+#gotoreg : hover{
+	color: red;
+}
+
+footer{
+	width:100%;
+	padding-top: 30px;
+	font-family: 'Lato', sans-serif;
+	text-align: center;
+	text-color: black;
+	background-color: #f4f4f4;
+	height: 50px;
+}
 #searchmid {
 	position: relative;
 	width: 800px;
