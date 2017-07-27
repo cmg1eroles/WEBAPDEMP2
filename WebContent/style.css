@@ -107,21 +107,30 @@ body {
 }
 
 #menu{
-	top: 60px;
-	position: relative;
+	top: 55px;
+	position: absolute;
 	width: 100%;
 	height: 35px;
 	background-color: lightgray;
-	right: 0;
 	left: 0;
+	align-content: center;
 }
 
 #innermenu{
-	top: 5px;
+	position: relative;
+	top: 8px;
 	text-align: center;
-	margin: auto;
 }
+
+.menubtn {
+	color: #333;
+	font-weight: bold;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
 /** userprofile **/
+
 .below-header{
 	text-align: center;
 	height:410px;
@@ -236,32 +245,28 @@ input{
 	height:90px;
 }
 
-#highlight {
-    background-color: white;
-    width: 42px;
-    height: 40px;
-    border-radius: 10px;
-    position: fixed;
-    right: 550px;
-    top: 10px;
-    z-index: -1;
-}
 
-#highlight : hover{
-	background-color: gray;
-}
 #search-button {
-	background: url(resources/icons/magnifying-glass.png) no-repeat 0 0;
+	position: relative;
+	background: #ffffff url(resources/icons/magnifying-glass.png) no-repeat center center;
     width: 32px;
     height: 32px;
-    border: none;
-    margin-top: 12px;
-    margin-right: 12px;
+    //border: none;
+    padding: 18px;
+    border-radius: 0px 10px 10px 0px;
+    top: 5px;
+    right: 40px;
+}
+
+#search-button:hover {
+	background-color: lightgray;
 }
 
 #hanap {
-    margin-right: 50px;
-    margin-top: 10px;
+	position: relative;
+    right: 36px;
+    top: 8px;
     height: 35px;
     width: 250px;
-    border-radius: 10px;
+    border-radius: 10px 0px 0px 10px;
+}
