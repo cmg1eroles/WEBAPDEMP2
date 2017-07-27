@@ -55,7 +55,7 @@
          	<img id="modal-photo">
          	<div id="modal-info">
 	         	<div class="photo-info" id="photo-title">Title</div> 
-	         	<div class="photo-info" id="photo-uploader">Uploader</div>
+	         	<div class="photo-info clickable" id="photo-uploader">Uploader</div>
 	         	<div class="photo-info" id="photo-desc">Description</div>
 	         	<div class="photo-info" id="photo-tags">Tags</div>
 	         </div>
