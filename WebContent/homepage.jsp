@@ -14,15 +14,6 @@
 		<a href="loginreg.html" id="signin" class="signing">SIGN IN</a>
 		<a href="logout" id="signout" class="signing">SIGN OUT</a>
 		<span id="username">${sessionScope.un}</span>
-		<!-- <span id="searchbtn"><img src="resources/icons/magnifying-glass.png">
-			</span>
-			
-		<div id="searchmid">
-			<form id="search" >
-				<input type="text" name="search" placeholder="Search tags, photos">			
-			</form>
-		</div>
-	</div> -->
 	
 		<div style="float:right">
 			<form style="float:right" method="POST">
@@ -44,7 +35,16 @@
 	</div>
 	
 	<div id="container">
-    	
+    	<div class="thumbnail"><img src="resources/imgs/public/batman1.jpg"></div>
+    	<div class="thumbnail"><img src="resources/imgs/public/batman2.jpg"></div>
+    	<div class="thumbnail"><img src="resources/imgs/public/batman3.jpg"></div>
+    	<div class="thumbnail"><img src="resources/imgs/public/batman4.jpg"></div>
+    	<div class="thumbnail"><img src="resources/imgs/public/batman5.jpg"></div>
+    	<div class="thumbnail"><img src="resources/imgs/public/girl1.jpg"></div>
+    	<div class="thumbnail"><img src="resources/imgs/public/girl2.jpg"></div>
+    	<div class="thumbnail"><img src="resources/imgs/public/girl3.jpg"></div>
+    	<div class="thumbnail"><img src="resources/imgs/public/girl4.jpg"></div>
+    	<div class="thumbnail"><img src="resources/imgs/public/girl5.jpg"></div>
     </div>  
         
     <div id="more">

@@ -1,8 +1,11 @@
 $(document).ready(function() {
 	$(".signing").hide();
+	$("#menu").hide();
 	
 	var uname = $("#username").html();
-	if (uname != "")
+	if (uname != "") {
 		$("#signout").show();
-	else $("#signin").show();
+		$("#menu").show();
+	} else 
+		$("#signin").show();
 });
