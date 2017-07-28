@@ -45,6 +45,14 @@ public class PhotoServlet extends HttpServlet {
 			String desc = request.getParameter("desc");
 			String tags = request.getParameter("tag");
 			String type = request.getParameter("btn");
+			boolean privacy = false;
+			if (type.equals("Post as public photo")) {
+				privacy = false;
+			} else if (type.equals("Post as private photo")) {
+				privacy = true;
+			}
+			
+			//upload to DB and stuff
 			
 			request.setAttribute("msg", title + " successfully uploaded!");
 			request.getRequestDispatcher("uploadpage.jsp").forward(request, response);
