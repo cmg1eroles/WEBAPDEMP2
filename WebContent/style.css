@@ -330,15 +330,15 @@ footer{
 
 /** uploadpage **/
 
-#upload-container{
+#upload-container {
 	padding-top: 100px;
 }
 
-#upload-icon{
+#upload-icon {
 	text-align: center;
 }
 
-#details{
+#details {
 	text-align: center;
 	font-size: 28px;
     color:black;
@@ -346,19 +346,19 @@ footer{
 
 }
 
-hr{
+hr {
 	width: 800px;
 	border-top: 1px solid #f8f8f8;
 	border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 
-input{
+input {
 	width:30%;
 	height:30px;
 	border-radius: 5px;
 }
 
-#descr{
+#descr {
 	height:90px;
 }
 

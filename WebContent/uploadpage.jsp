@@ -18,11 +18,11 @@
 	
 	<div id="upload-container">
 		<div id="upload-icon">
-			<img src="resources/icons/upload.png">
+			<img id="upload-img" src="resources/icons/upload.png">
 		</div>
 		<hr>
 		<form id="details">
-			<input type="file" name="image">
+			<input id="imginp" type="file" name="image" accept=".jpg, .png, .tiff">
 			<br><br>
 			Title: <input type="text" name="title">
 			<br><br>
@@ -36,8 +36,25 @@
 	</div>
 	
 	<script>
+		
+		function readURL(input) {
+			if (input.files && input.files[0]) {
+				var reader = new FileReader();
+				reader.onload = function(e) {
+					$("#upload-img").attr("src", e.target.result);
+				}
+				reader.readAsDataURL(input.files[0]);
+			}
+		}
+		
 		$(document).ready(function() {
 			$("#signout").show();
+			
+			$("#imginp").change(function() {
+				readURL(this);
+				$("#upload-img").css("width", "256px");
+				$("#upload-img").css("height", "256px");
+			});
 		});
 	</script>
 </body>
