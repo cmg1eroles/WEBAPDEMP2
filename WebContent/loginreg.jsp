@@ -65,7 +65,6 @@
 			}
 			
 			$("#gotoreg").click(function(){
-				console.log("lol");
 				$('html, body').animate({
                    scrollTop: $("#registerform").offset().top}, 500);
 			});

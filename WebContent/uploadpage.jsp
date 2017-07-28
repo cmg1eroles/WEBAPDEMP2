@@ -16,12 +16,13 @@
 		<span id="username">${sessionScope.un}</span>
 	</div>
 	
+	<div id="upload-success" class="success">${msg}</div>
 	<div id="upload-container">
 		<div id="upload-icon">
 			<img id="upload-img" src="resources/icons/upload.png">
 		</div>
 		<hr>
-		<form id="details">
+		<form action="uploadphoto" id="details" method="POST">
 			<input id="imginp" type="file" name="image" accept=".jpg, .png, .tiff">
 			<br><br>
 			Title: <input type="text" name="title">
@@ -30,8 +31,8 @@
 			<br><br>
 			Tags: <input type="text" name="tag">
 			<br><br>
-			<button class="choose">Post as public photo</button>
-			<button class="choose">Post as private photo</button>
+			<input class="choose" name="btn" type="submit" value="Post as public photo">
+			<input class="choose" name="btn" type="submit" value="Post as private photo">
 		</form>
 	</div>
 	
@@ -49,6 +50,9 @@
 		
 		$(document).ready(function() {
 			$("#signout").show();
+			
+			if ($("#upload-success").html() != "")
+				$("#upload-success").show();
 			
 			$("#imginp").change(function() {
 				readURL(this);

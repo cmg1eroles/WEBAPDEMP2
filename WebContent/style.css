@@ -171,6 +171,17 @@ footer{
 	cursor: pointer;
 }
 
+.success {
+	position: absolute;
+	background-color: #31d848;
+	left: 0;
+	width: 100%;
+	height: 25px;
+	color: #fff;
+	text-align: center;
+	display: none;
+}
+
 /** loginregister **/
 
 #loginform {
@@ -235,7 +246,6 @@ footer{
 	left: 0;
 	width: 100%;
 	height: 25px;
-	z-index: 1;
 	color: #fff;
 	text-align: center;
 	display: none;
@@ -336,6 +346,10 @@ footer{
 
 #upload-icon {
 	text-align: center;
+}
+
+#upload-success {
+	top: 55px;
 }
 
 #details {
