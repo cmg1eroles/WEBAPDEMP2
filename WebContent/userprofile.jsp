@@ -9,6 +9,7 @@
 <script src="jquery-3.2.1.js"></script>
 <script src="header.js"></script>
 <script src="loadphotos.js"></script>
+<script src="loadusers.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <body>
 
@@ -22,15 +23,15 @@
 		<img src="resources/icons/profile.png" id="dp">
 		<hr id="fhr">
 		<div id="name-container">
-			<span id="profile-name">TestName</span>
-			<span id="profile-username">(TestUserName)</span>
+			<span id="profile-name">${uname}</span>
+			<!--  <span id="profile-username">(TestUserName)</span> -->
 		</div>
 	</div>
 	
 	<div id="divider">
 		<hr>
 			<div id="desc">
-				Test Description. Test Description. Test Description.
+				Description
 			</div>
 		<hr>
 	</div>
@@ -38,7 +39,18 @@
 	<div class="photos-container"></div>
 	
 	<script>
-		
+		$(document).ready(function() {
+			var uname = $("#profile-name").html();
+			console.log(uname);
+			$.when(loadPublicPhotos(), loadPrivatePhotos(), loadUsers()).done(function() {
+				for (var i = 0 ; i < users.length ; i++) {
+					if (users[i].username == uname) {
+						$("#desc").text(users[i].description);
+						break;
+					}
+				}
+			});
+		});
 	</script>
 </body>
 </html>

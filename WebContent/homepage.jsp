@@ -9,6 +9,7 @@
 <script src="jquery-3.2.1.js"></script>
 <script src="header.js"></script>
 <script src="loadphotos.js"></script>
+<script src="loadusers.js"></script>
 </head>
 <body>
 	<div id="header">
@@ -174,8 +175,6 @@
     			else if (mode == "shared")
     				photo = sharedpics[id];
     			
-    			console.log(photo);
-    			
     			$("#modal-photo").attr("src", photo.src);
     			$("#photo-title").text(photo.title);
     			$("#photo-uploader").text(photo.user);
@@ -189,6 +188,10 @@
                     $("#modal").css("display", "none");
                 }
             }
+            
+            $("#photo-uploader").click(function() {
+            	window.location = "profile?u=" + $("#photo-uploader").text();
+            });
     	});
     </script>
 </body>
