@@ -52,6 +52,7 @@
 	         	<div class="photo-info" id="photo-uploader">Uploader</div>
 	         	<div class="photo-info" id="photo-desc">Description</div>
 	         	<div class="photo-info" id="photo-tags">Tags</div>
+	         	<img id="editbtn" class="clickable" src="resources/icons/edit.png">
 	         </div>
          </div>
     </div>
@@ -61,6 +62,7 @@
 		var pics = [];
 		var uname, profile;
     	var lastpic;
+    	var picid;
     	
     	function loadPics() {
     		for (var i = 0 ; i < publicphotos.length ; i++) {
@@ -102,6 +104,8 @@
 			
 			uname = $("#username").html();
 			profile = $("#profile-name").html();
+			if (uname == profile)
+				$("#editbtn").show();
 			
 			$.when(loadPublicPhotos(), loadPrivatePhotos(), loadUsers()).done(function() {
 				for (var i = 0 ; i < users.length ; i++) {
@@ -140,10 +144,15 @@
     			$("#photo-title").text(photo.title);
     			$("#photo-uploader").text(photo.user);
     			$("#photo-desc").text(photo.desc);
+    			picid = photo.id;
     			
     			$("#modal").css("display", "flex");
     		});
-    		
+  			
+			$("#editbtn").click(function() {
+				window.location = "editphoto?id=" + picid;
+			});
+			
     		window.onclick = function(event) {
                 if (event.target == document.getElementById("modal")) {
                     $("#modal").css("display", "none");
