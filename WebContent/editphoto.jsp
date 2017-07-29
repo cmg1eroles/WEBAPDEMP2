@@ -1,8 +1,13 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<title>Instaliter | Edit</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="jquery-3.2.1.js"></script>
+<script src="loadphotos.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Instaliter | Edit</title>
 </head>
 <body>
 	<div id="header">
@@ -29,9 +34,24 @@
 			<br><br>
 			Share with: <input type="text" name="share">
 			<br><br>
-			<button type="submit" name="edit" id="edit-btn">Apply Changes</button>
+			<input type="submit" name="edit" id="edit-btn" value="Apply Changes">
 		</div>	
 		</form>
 	</div>
+	
+	<script>
+		var uname;
+		
+		$(document).ready(function() {
+			uname = $("#username").html();
+			$("#signout").show();
+			
+			
+			
+			$("#username").click(function() {
+				window.location = "profile?u=" + uname;
+			});
+		});
+	</script>
 </body>
 </html>
