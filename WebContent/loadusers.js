@@ -10,5 +10,5 @@ var users = [];
 function loadUsers() {
 	users.push(new User(1, "cmg1eroles", "batman", "I'm Batman"));
 	users.push(new User(2, "michaelrespicio", "1", "something lol"));
-	users.push(new User(3, "jjmojica", "jsquared", "my description here"));
+	users.push(new User(3, "jjmojica", "jsquared", "ID 115 BSCS-ST"));
 }

@@ -23,6 +23,7 @@
 		</div>
 		<hr>
 		<form action="uploadphoto" id="details" method="POST">
+		<div class="form-div">
 			<input id="imginp" type="file" name="image" accept=".jpg, .png, .tiff">
 			<br><br>
 			Title: <input type="text" name="title">
@@ -30,6 +31,7 @@
 			Description: <input type="text" name="desc" id="descr">
 			<br><br>
 			Tags: <input type="text" name="tag">
+		</div>
 			<br><br>
 			<input class="choose" name="btn" type="submit" value="Post as public photo">
 			<input class="choose" name="btn" type="submit" value="Post as private photo">

@@ -489,7 +489,7 @@ input {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	aligh-self: center;
+	align-self: center;
 }
 
 #modal-container img {
@@ -509,4 +509,22 @@ input {
 	display: block;
 	padding-top: 10px;
 	margin-left: 10px;
+}
+
+#edit-btn{
+	width:300px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-radius: 10px;
+}
+#edit-container {
+	padding-top: 100px;
+}
+
+#edit-icon {
+	text-align: center;
+}
+
+#edit-success {
+	top: 55px;
 }
