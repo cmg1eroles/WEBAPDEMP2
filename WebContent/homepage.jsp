@@ -18,7 +18,7 @@
         </div>
 		<a href="loginreg.jsp" id="signin" class="signing">SIGN IN</a>
 		<a href="logout" id="signout" class="signing">SIGN OUT</a>
-		<span id="username">${sessionScope.un}</span>
+		<span id="username" class="clickable">${sessionScope.un}</span>
 	
 		<div style="float:right">
 			<form style="float:right" method="POST">
@@ -192,6 +192,10 @@
             $("#photo-uploader").click(function() {
             	window.location = "profile?u=" + $("#photo-uploader").text();
             });
+            
+            $("#username").click(function() {
+				window.location = "profile?u=" + uname;
+			});
     	});
     </script>
 </body>

@@ -13,7 +13,7 @@
 	<div id="header">
 		<a href="homepage.jsp"><button class="clickable" id="btn-name">Instaliter</button></a>
 		<a href="logout" id="signout" class="signing">SIGN OUT</a>
-		<span id="username">${sessionScope.un}</span>
+		<span id="username" class="clickable">${sessionScope.un}</span>
 	</div>
 	
 	<div id="upload-success" class="success">${msg}</div>
@@ -37,6 +37,7 @@
 	</div>
 	
 	<script>
+		var uname;
 		
 		function readURL(input) {
 			if (input.files && input.files[0]) {
@@ -49,6 +50,7 @@
 		}
 		
 		$(document).ready(function() {
+			uname = $("#username").html();
 			$("#signout").show();
 			
 			if ($("#upload-success").html() != "")
@@ -58,6 +60,10 @@
 				readURL(this);
 				$("#upload-img").css("width", "256px");
 				$("#upload-img").css("height", "256px");
+			});
+			
+			$("#username").click(function() {
+				window.location = "profile?u=" + uname;
 			});
 		});
 	</script>

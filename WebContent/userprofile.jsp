@@ -17,7 +17,7 @@
 		<a href="homepage.jsp"><button class="clickable" id="btn-name">Instaliter</button></a>
 		<a href="loginreg.jsp" id="signin" class="signing">SIGN IN</a>
 		<a href="logout" id="signout" class="signing">SIGN OUT</a>
-		<span id="username">${sessionScope.un}</span>
+		<span id="username" class="clickable">${sessionScope.un}</span>
 	</div>
 	<div class="below-header">
 		<img src="resources/icons/profile.png" id="dp">
@@ -115,6 +115,9 @@
 				});
 			});
 			
+			$("#username").click(function() {
+				window.location = "profile?u=" + uname;
+			});
 		});
 	</script>
 </body>
