@@ -237,7 +237,6 @@ footer{
 #more:hover{
     background-color: #ff5964;
     text-decoration: underline;
-
 }
 
 .error {
@@ -271,13 +270,14 @@ footer{
 }
 
 .photos-container{
-	height:1000px;
+	width: 100%;
 	background-color: white;
-	position:absolute;
-	top: 0;
-    right: 0;
-    left: 0;
-    z-index:-2;
+	position: absolute;
+	top: 460px;
+	left: 0px;
+    //z-index:-2;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 #profile-name {
@@ -336,6 +336,18 @@ footer{
 
 #btns{
 	position:;
+}
+
+#morepics {
+	position: relative;
+    width: 100%;
+    top: 630px;
+    height: 35px;
+}
+
+#morepics:hover {
+	background-color: #ff5964;
+    text-decoration: underline;
 }
 
 /** uploadpage **/
