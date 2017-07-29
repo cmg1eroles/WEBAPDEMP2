@@ -44,6 +44,18 @@
     	</div>
     </div>
     
+    <div id="modal">
+         <div id="modal-container">
+         	<img id="modal-photo">
+         	<div id="modal-info">
+	         	<div class="photo-info" id="photo-title">Title</div> 
+	         	<div class="photo-info" id="photo-uploader">Uploader</div>
+	         	<div class="photo-info" id="photo-desc">Description</div>
+	         	<div class="photo-info" id="photo-tags">Tags</div>
+	         </div>
+         </div>
+    </div>
+    
 	<script>
 		const BY = 5;
 		var pics = [];
@@ -118,6 +130,25 @@
 			$("#username").click(function() {
 				window.location = "profile?u=" + uname;
 			});
+			
+			$(document).on("click", ".thumbnail", function(event) {
+    			var photo, id;
+    			id = event.currentTarget.getAttribute("data-photoId");
+    			photo = pics[id];
+    			
+    			$("#modal-photo").attr("src", photo.src);
+    			$("#photo-title").text(photo.title);
+    			$("#photo-uploader").text(photo.user);
+    			$("#photo-desc").text(photo.desc);
+    			
+    			$("#modal").css("display", "flex");
+    		});
+    		
+    		window.onclick = function(event) {
+                if (event.target == document.getElementById("modal")) {
+                    $("#modal").css("display", "none");
+                }
+            }
 		});
 	</script>
 </body>
