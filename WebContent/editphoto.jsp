@@ -25,7 +25,22 @@
 		</div>
 		<hr>
 		<form action="updatephoto" id="details" method="POST">
-		<div class="form-div">
+		<br>
+			<div class="editlbl">EDIT</div>
+			<br><br>
+			Title: <input type="text" name="title" id="title">
+			<br><br>
+			Description: <input type="text" name="desc" id="descr">
+			<br><br>
+			Tags: <input type="text" name="tag" id="tag">
+			<br><br>
+			Share with: <input type="text" name="share" id="share">
+			<br><br>
+			<div class="editbtn">
+				<input class="choose" name="edit" type="submit" value="Apply Changes">
+			</div>
+			<br><br>
+		<!-- <div class="form-div">
 			<br><br>
 			Title: <input type="text" name="title" id="title">
 			<br><br>
@@ -36,7 +51,7 @@
 			Share with: <input type="text" name="share" id="share">
 			<br><br>
 			<input type="submit" name="edit" id="edit-btn" value="Apply Changes">
-		</div>	
+		</div> -->	
 		</form>
 	</div>
 	

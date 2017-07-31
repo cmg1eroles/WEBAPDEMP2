@@ -23,8 +23,26 @@
 			<img id="upload-img" src="resources/icons/upload.png">
 		</div>
 		<hr>
+		<div class="uploaddiv">
 		<form action="uploadphoto" id="details" method="POST" enctype="multipart/form-data">
-		<div class="form-div">
+			<br>
+			<div class="uploadlbl">UPLOAD</div>
+			<br><br>
+			Title: <input type="text" name="title">
+			<br><br>
+			Description: <input type="text" name="descr" id="edit-desc">
+			<br><br>
+			Tags: <input type="text" name="tag">
+			<br><br>
+			<div class="uploadbtn">
+				<input class="choose" name="btn" type="submit" value="Post as Public Photo">
+				<input class="choose" name="btn" type="submit" value="Post as Private Photo">
+			</div>
+			<br><br>
+		</form>
+		</div>
+		<!-- <form action="uploadphoto" id="details" method="POST" enctype="multipart/form-data">
+		<div class="form-div-upload">
 			<input id="imginp" type="file" name="image" accept=".jpg, .png, .tiff">
 			<br><br>
 			Title: <input type="text" name="title">
@@ -36,7 +54,7 @@
 			<br><br>
 			<input class="choose" name="btn" type="submit" value="Post as public photo">
 			<input class="choose" name="btn" type="submit" value="Post as private photo">
-		</form>
+		</form> -->
 	</div>
 	
 	<script>
