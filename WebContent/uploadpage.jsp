@@ -16,13 +16,14 @@
 		<span id="username" class="clickable">${sessionScope.un}</span>
 	</div>
 	
-	<div id="upload-success" class="success">${msg}</div>
+	<div id="upload-error" class="error">${error}</div>
+	<div id="upload-success" class="success">${success}</div>
 	<div id="upload-container">
 		<div id="upload-icon">
 			<img id="upload-img" src="resources/icons/upload.png">
 		</div>
 		<hr>
-		<form action="uploadphoto" id="details" method="POST">
+		<form action="uploadphoto" id="details" method="POST" enctype="multipart/form-data">
 		<div class="form-div">
 			<input id="imginp" type="file" name="image" accept=".jpg, .png, .tiff">
 			<br><br>
@@ -57,6 +58,9 @@
 			
 			if ($("#upload-success").html() != "")
 				$("#upload-success").show();
+			
+			if ($("#upload-error").html() != "")
+				$("#upload-error").show();
 			
 			$("#imginp").change(function() {
 				readURL(this);

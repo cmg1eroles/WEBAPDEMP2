@@ -1,6 +1,8 @@
 
 
 import java.io.IOException;
+import java.nio.file.Paths;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -13,6 +15,7 @@ import javax.servlet.http.Part;
  * Servlet implementation class PhotoServlet
  */
 @WebServlet(urlPatterns={"/uploadphoto","/editphoto","/updatephoto"})
+@MultipartConfig
 public class PhotoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -48,7 +51,8 @@ public class PhotoServlet extends HttpServlet {
 		//doGet(request, response);
 		
 		if (request.getServletPath().equals("/uploadphoto")) {
-			String fname = request.getParameter("imginp");
+			Part filePart = request.getPart("image");
+			String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
 			String title = request.getParameter("title");
 			String desc = request.getParameter("desc");
 			String tags = request.getParameter("tag");
@@ -61,8 +65,12 @@ public class PhotoServlet extends HttpServlet {
 			}
 			
 			//upload to DB and stuff
+			if (!fileName.equals("") && !title.equals("") && !desc.equals("") && !tags.equals("")) {
+				request.setAttribute("success", fileName + " successfully uploaded!");
+			} else {
+				request.setAttribute("error", "ERROR: Could not upload image!");
+			}
 			
-			request.setAttribute("msg", title + " successfully uploaded!");
 			request.getRequestDispatcher("uploadpage.jsp").forward(request, response);
 		}
 	}

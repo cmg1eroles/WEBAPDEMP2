@@ -373,6 +373,10 @@ footer{
 	top: 55px;
 }
 
+#upload-error {
+	top: 55px;
+}
+
 #details {
 	text-align: center;
 	font-size: 28px;
