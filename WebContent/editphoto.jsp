@@ -26,13 +26,13 @@
 		<form action="uploadphoto" id="details" method="POST">
 		<div class="form-div">
 			<br><br>
-			Title: <input type="text" name="title">
+			Title: <input type="text" name="title" id="title">
 			<br><br>
 			Description: <input type="text" name="desc" id="descr">
 			<br><br>
-			Tags: <input type="text" name="tag">
+			Tags: <input type="text" name="tag" id="tags">
 			<br><br>
-			Share with: <input type="text" name="share">
+			Share with: <input type="text" name="share" id="share">
 			<br><br>
 			<input type="submit" name="edit" id="edit-btn" value="Apply Changes">
 		</div>	
@@ -41,12 +41,40 @@
 	
 	<script>
 		var uname;
+		var photoId = ${photoId}
 		
 		$(document).ready(function() {
 			uname = $("#username").html();
 			$("#signout").show();
 			
-			
+			$.when(loadPublicPhotos(), loadPrivatePhotos()).done(function() {
+				var photo = null;
+				for (var i = 0 ; i < publicphotos.length ; i++) {
+					if (publicphotos[i].id == photoId) {
+						photo = publicphotos[i];
+						break;
+					}
+				}
+				
+				if (photo == null) {
+					for (var i = 0 ; i < privatephotos.length ; i++) {
+						if (privatephotos[i].id == photoId) {
+							photo = privatephotos[i];
+							break;
+						}
+					}
+				}
+				
+				$("#edit-img").attr("src", photo.src);
+				$("#edit-img").attr("width", "256px");
+				$("#edit-img").attr("height", "256px");
+				
+				$("#title").attr("value", photo.title);
+				$("#descr").attr("value", photo.desc);
+				$("#tags").attr("value", photo.tags);
+				$("#share").attr("value", photo.allowed);
+				
+			});
 			
 			$("#username").click(function() {
 				window.location = "profile?u=" + uname;

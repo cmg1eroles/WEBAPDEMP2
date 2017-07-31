@@ -179,6 +179,7 @@
     			$("#photo-title").text(photo.title);
     			$("#photo-uploader").text(photo.user);
     			$("#photo-desc").text(photo.desc);
+    			$("#photo-tags").text("Tags: " + photo.tags);
     			
     			$("#modal").css("display", "flex");
     		});

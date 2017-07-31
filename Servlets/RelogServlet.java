@@ -54,7 +54,7 @@ public class RelogServlet extends HttpServlet {
 		}else{
 			// user had not visited website, or logged out
 			// go to index.html
-			response.sendRedirect("index.html");
+			response.sendRedirect("homepage.jsp");
 		}
 	}
 
