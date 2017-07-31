@@ -72,6 +72,18 @@ public class PhotoServlet extends HttpServlet {
 			}
 			
 			request.getRequestDispatcher("uploadpage.jsp").forward(request, response);
+		} else if (request.getServletPath().equals("/updatephoto")) {
+			String title = request.getParameter("title");
+			String desc = request.getParameter("desc");
+			String tags = request.getParameter("tag");
+			String share = request.getParameter("share");
+			
+			if (!title.equals("") && !desc.equals("") && !tags.equals("")) {
+				request.setAttribute("success",  "Image successfully updated!");
+			} else {
+				request.setAttribute("error", "ERROR: Could not update image!");
+			}
+			request.getRequestDispatcher("editphoto.jsp").forward(request, response);
 		}
 	}
 

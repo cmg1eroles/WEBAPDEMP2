@@ -541,3 +541,7 @@ input {
 #edit-success {
 	top: 55px;
 }
+
+#edit-error {
+	top: 55px;
+}

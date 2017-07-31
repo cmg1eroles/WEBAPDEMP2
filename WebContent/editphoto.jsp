@@ -15,15 +15,16 @@
 		<a href="logout" id="signout" class="signing">SIGN OUT</a>
 		<span id="username" class="clickable">${sessionScope.un}</span>
 	</div>
-
-	<div id="edit-success" class="success">${msg}</div>
+	
+	<div id="edit-error" class="error">${error}</div>
+	<div id="edit-success" class="success">${success}</div>
 
 	<div id="edit-container">
 		<div id="edit-icon">
 			<img id="edit-img" src="resources/icons/edit.png">
 		</div>
 		<hr>
-		<form action="uploadphoto" id="details" method="POST">
+		<form action="updatephoto" id="details" method="POST">
 		<div class="form-div">
 			<br><br>
 			Title: <input type="text" name="title" id="title">
@@ -46,6 +47,12 @@
 		$(document).ready(function() {
 			uname = $("#username").html();
 			$("#signout").show();
+			
+			if ($("#edit-success").html() != "")
+				$("#edit-success").show();
+			
+			if ($("#edit-error").html() != "")
+				$("#edit-error").show();
 			
 			$.when(loadPublicPhotos(), loadPrivatePhotos()).done(function() {
 				var photo = null;
