@@ -585,3 +585,12 @@ input {
 .editdiv input{
 	width:300px;
 }
+
+#to-upload-page{
+	position: relative;
+	font-size: 15px;
+	z-index: 2;
+	float:right;
+	margin-right: 50px;
+	margin-top: 10px;
+}

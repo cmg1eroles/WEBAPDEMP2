@@ -18,6 +18,9 @@
 		<a href="loginreg.jsp" id="signin" class="signing">SIGN IN</a>
 		<a href="logout" id="signout" class="signing">SIGN OUT</a>
 		<span id="username" class="clickable">${sessionScope.un}</span>
+		<a href="uploadpage.jsp"><span id="to-upload-page" class="clickable">
+            <img src="resources/icons/upload1.png">
+        </span></a>
 	</div>
 	<div class="below-header">
 		<img src="resources/icons/profile.png" id="dp">

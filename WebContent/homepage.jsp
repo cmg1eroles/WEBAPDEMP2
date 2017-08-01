@@ -26,6 +26,10 @@
 			<input type="submit" id="search-button" value="">
 			</form>
 		</div>
+
+        <a href="uploadpage.jsp"><span id="to-upload-page" class="clickable">
+            <img src="resources/icons/upload1.png">
+        </span></a>
 	</div>
 	
 	<div id="menu"> 

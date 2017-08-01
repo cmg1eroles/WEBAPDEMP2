@@ -21,7 +21,7 @@
 
 	<div id="edit-container">
 		<div id="edit-icon">
-			<img id="edit-img" src="resources/icons/edit.png">
+			<img id="edit-img" src="resources/icons/edit1.png">
 		</div>
 		<hr>
 		<form action="updatephoto" id="details" method="POST">
