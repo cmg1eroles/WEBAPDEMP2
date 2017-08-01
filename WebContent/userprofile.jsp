@@ -107,8 +107,10 @@
 			
 			uname = $("#username").html();
 			profile = $("#profile-name").html();
-			if (uname == profile)
+			if (uname == profile) {
 				$("#editbtn").show();
+				$("#to-upload-page").show();
+			}
 			
 			$.when(loadPublicPhotos(), loadPrivatePhotos(), loadUsers()).done(function() {
 				for (var i = 0 ; i < users.length ; i++) {

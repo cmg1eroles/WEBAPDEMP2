@@ -151,6 +151,9 @@
     		uname = $("#username").html();
     		searchkey = $("#hanap").attr("value");
     		
+    		if (uname != "")
+    			$("#to-upload-page").show();
+    		
     		if (searchkey != "dog") {
 	    		$("#private-container").hide();
 	    		$("#public-container").show();
