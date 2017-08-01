@@ -171,10 +171,10 @@
 	    			lastshared = sharedpics.length-1;
 	    			
 	    			loadNext(BY);
-	    			if (lastpic = -1)
+	    			if (mode == "public" && lastpic == -1)
 	    					$("#more").hide();
 	    			loadPrivate(BY);
-	    			if (lastshared == -1)
+	    			if (mode == "private" && lastshared == -1)
 	    					$("#more").hide();
 		            
 		    		$("#more").click(function() {
