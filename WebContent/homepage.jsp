@@ -21,8 +21,8 @@
 		<span id="username" class="clickable">${sessionScope.un}</span>
 	
 		<div style="float:right">
-			<form style="float:right" method="POST">
-			<input id="hanap" type="text">
+			<form action="search" style="float:right" method="GET">
+			<input id="hanap" type="text" name="key" value="${searchkey}">
 			<input type="submit" id="search-button" value="">
 			</form>
 		</div>
@@ -66,15 +66,38 @@
     <script>
     	const BY = 15;
     	var sharedpics = [];
-    	var uname, mode;
+    	var publicpics = [];
+    	var uname, searchkey = "", mode;
     	var lastpic, lastshared;
     	
     	function loadShared() {
-    		for (var i = 0 ; i < privatephotos.length ; i++) {
-    			var p = privatephotos[i];
-    			var allowed = p.allowed;
-    			if ($.inArray(uname, allowed) >= 0) 
-    				sharedpics.push(p);
+    		if (searchkey == "dog" || searchkey == "") {
+	   			for (var i = 0 ; i < privatephotos.length ; i++) {
+	    			var p = privatephotos[i];
+	    			var allowed = p.allowed;
+	   				if ($.inArray(uname, allowed) >= 0) 
+	   					sharedpics.push(p);
+	   			}
+   			}
+    	}
+    	
+    	function loadPublicPics() {
+    		if (searchkey == "batman") {
+    			for (var i = 0 ; i < 15 ; i++) {
+	    			var p = publicphotos[i];
+	    			publicpics.push(p);
+	    		}
+    		} else if (searchkey == "girl") {
+    			for (var i = 15 ; i < 30 ; i++) {
+	    			var p = publicphotos[i];
+	    			publicpics.push(p);
+	    		}
+    		} else if (searchkey == "dog"){
+    		} else if (searchkey == ""){
+    			for (var i = 0 ; i < publicphotos.length ; i++) {
+	    			var p = publicphotos[i];
+	    			publicpics.push(p);
+	    		}
     		}
     	}
     	
@@ -86,7 +109,7 @@
     		$(d).addClass("clickable");
     		
     		$(d).attr("data-photoId", num);
-    		$(img).attr("src", publicphotos[num].src);
+    		$(img).attr("src", publicpics[num].src);
     		
     		$(d).append(img);
     		$("#public-container").append(d);
@@ -122,18 +145,30 @@
     	
     	$(document).ready(function() {
     		uname = $("#username").html();
-    		$("#private-container").hide();
-    		$("#public-container").show();
-    		mode = "public";
+    		searchkey = $("#hanap").attr("value");
+    		
+    		if (searchkey != "dog") {
+	    		$("#private-container").hide();
+	    		$("#public-container").show();
+	    		mode = "public";
+    		} else {
+    			$("#public-container").hide();
+	    		$("#private-container").show();
+	    		mode = "private";
+    		}
     	
     		$.when(loadPublicPhotos(), loadPrivatePhotos()).done(function() {
-    			$.when(loadShared()).done(function() {
+    			$.when(loadPublicPics(), loadShared()).done(function() {
     				
-    				lastpic = publicphotos.length-1;
+    				lastpic = publicpics.length-1;
 	    			lastshared = sharedpics.length-1;
 	    			
 	    			loadNext(BY);
+	    			if (lastpic = -1)
+	    					$("#more").hide();
 	    			loadPrivate(BY);
+	    			if (lastshared == -1)
+	    					$("#more").hide();
 		            
 		    		$("#more").click(function() {
 		    			if (mode == "public") {
@@ -171,7 +206,7 @@
     			var photo, id;
     			id = event.currentTarget.getAttribute("data-photoId");
     			if (mode == "public")
-    				photo = publicphotos[id];
+    				photo = publicpics[id];
     			else if (mode == "shared")
     				photo = sharedpics[id];
     			

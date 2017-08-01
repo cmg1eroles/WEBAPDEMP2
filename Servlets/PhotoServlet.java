@@ -54,7 +54,7 @@ public class PhotoServlet extends HttpServlet {
 			Part filePart = request.getPart("image");
 			String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
 			String title = request.getParameter("title");
-			String desc = request.getParameter("desc");
+			String desc = request.getParameter("descr");
 			String tags = request.getParameter("tag");
 			String type = request.getParameter("btn");
 			boolean privacy = false;

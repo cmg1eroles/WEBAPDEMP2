@@ -28,6 +28,8 @@
 			<br>
 			<div class="uploadlbl">UPLOAD</div>
 			<br><br>
+			<input id="imginp" type="file" name="image" accept=".jpg, .png, .tiff">
+			<br><br>
 			Title: <input type="text" name="title">
 			<br><br>
 			Description: <input type="text" name="descr" id="edit-desc">

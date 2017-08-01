@@ -93,7 +93,7 @@
 				
 				$("#title").attr("value", photo.title);
 				$("#descr").attr("value", photo.desc);
-				$("#tags").attr("value", photo.tags);
+				$("#tag").attr("value", photo.tags);
 				$("#share").attr("value", photo.allowed);
 				
 			});
